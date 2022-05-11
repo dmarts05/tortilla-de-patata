@@ -1,4 +1,5 @@
 const checkBtn = document.getElementById('check');
+const resetBtn = document.getElementById('reset');
 const startBtn = document.getElementById('start');
 const ingredients = document.querySelectorAll('.ingredients-list li');
 const inputIngredient = document.getElementById('input-ingredient');
@@ -20,6 +21,7 @@ startBtn.addEventListener('click', () => {
   ingredients.forEach((ingredient) => ingredient.classList.toggle('hidden'));
 
   checkBtn.classList.toggle('hidden');
+  resetBtn.classList.toggle('hidden');
   inputIngredient.classList.toggle('hidden');
 });
 
@@ -34,8 +36,16 @@ checkBtn.addEventListener('click', () => {
 
     if (ingredient.textContent.toLowerCase() === input) {
       ingredient.classList.remove('hidden');
+      inputIngredient.value = '';
     }
   });
+
+  if (getPoints() === 5) {
+    inputIngredient.classList.toggle('hidden');
+    checkBtn.classList.toggle('hidden');
+    document.getElementById('result').style.backgroundColor = 'green';
+    document.getElementById('result').textContent = `${points}/5`;  
+  }
 });
 
 document.addEventListener('keydown', (e) => {
