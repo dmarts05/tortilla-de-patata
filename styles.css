@@ -1,0 +1,100 @@
+:root {
+  --accent-color: #f69906;
+  --black-color: #313131;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+  list-style-type: none;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  height: 100vh;
+  background-image: url('https://s1.eestatic.com/2020/04/10/ciencia/nutricion/nutricion_481463388_150096482_1024x576.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero-title {
+  font-size: 5em;
+  font-weight: 600;
+}
+.hero-subtitle {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+.ingredients-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.ingredients-list li {
+  background-color: var(--accent-color);
+  padding: 0.5em 1.5em;
+  border-radius: 0.25em;
+}
+
+.hero-btn {
+  background-color: var(--black-color);
+  padding: 0.5em 1.5em;
+  font-size: 1.75em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+#input-ingredient {
+  width: 50%;
+  border: 0;
+  border-bottom: 2px solid white;
+  outline: 0;
+  font-size: 1.5em;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: all 0.25s;
+}
+
+#input-ingredient::placeholder {
+  color: white;
+}
+
+.hero p {
+  font-size: 2em;
+  background-color: var(--accent-color);
+  padding: 0.5em 1.5em;
+  border-radius: 50%;
+  width: 2em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero p.hidden {
+  display: none;
+}
